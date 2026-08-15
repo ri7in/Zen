@@ -1,6 +1,10 @@
-# Welcome to your Expo app 👋
+# Zen
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+> University coursework fork associated with [@ri7in](https://github.com/ri7in).
+
+A mobile wellbeing app for mood tracking, habits, assessments, appointments, and professional support.
+
+**Built with:** React Native, Expo, TypeScript, Node.js, Express, MongoDB
 
 ## Get started
 
