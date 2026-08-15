@@ -4,11 +4,14 @@ const app = express();
 const cors = require("cors");
 const habits = require("./routes/habitRoutes");
 const users = require("./routes/userRoutes");
+const MONGODB_URI = process.env.MONGODB_URI;
+
+if (!MONGODB_URI) {
+  throw new Error("MONGODB_URI environment variable is required");
+}
 
 mongoose
-  .connect(
-    "mongodb+srv://sachilaawandya:sachila20000816@habit-cluster.cldoa.mongodb.net/?retryWrites=true&w=majority&appName=habit-cluster"
-  )
+  .connect(MONGODB_URI)
   .then(() => console.log("Connect to MongoDB"))
   .catch((err) => console.log("Could not connect to MongoDB", err));
 
