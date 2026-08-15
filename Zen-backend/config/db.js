@@ -1,8 +1,13 @@
 const mongoose = require('mongoose');
+const MONGODB_URI = process.env.MONGODB_URI;
 
 const connectDB = async () => {
     try {
-        await mongoose.connect("mongodb+srv://sachilaawandya:sachila20000816@habit-cluster.cldoa.mongodb.net/?retryWrites=true&w=majority&appName=habit-cluster", {
+        if (!MONGODB_URI) {
+            throw new Error('MONGODB_URI environment variable is required');
+        }
+
+        await mongoose.connect(MONGODB_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
